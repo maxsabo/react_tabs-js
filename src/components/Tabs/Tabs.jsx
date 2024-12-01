@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+
 export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
   if (tabs.length === 0) {
     return <div>No tabs available</div>;
@@ -12,7 +14,7 @@ export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
           {tabs.map(tab => (
             <li
               key={tab.id}
-              className={tab.id === activeTab.id ? 'is-active' : ''}
+              className={classNames({ 'is-active': tab.id === activeTabId })}
               data-cy="Tab"
             >
               <a
